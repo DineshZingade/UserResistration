@@ -4,20 +4,21 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class UserResistration {
-	public void lastNameCheck() {
+	public void email() {
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Enter Last Name of User: ");
-		String lName = sc.next();
-		boolean check = Pattern.matches("^[A-Z]{1}+[a-z]{3,}$", lName);
+		System.out.print("Enter Email of User: ");
+		String eMail = sc.next();
+		boolean check = Pattern.matches("^[a-z]*([.]?[a-z]+)*@bl[.]co([.]?in)*", eMail);
 		if (check)
-			System.out.println("it is a LastName");
+			System.out.println("Perfect! Email!");
 		else
-			System.out.println("Please Enter a Valid Last Name");
+			System.out.println("Please Enter a Valid Email");
 	}
 
 	public static void main(String[] args) {
 		UserResistration user = new UserResistration();
 		System.out.println("Welcome to User Registration Program");
-		user.lastNameCheck();
+
+		user.email();
 	}
 }
